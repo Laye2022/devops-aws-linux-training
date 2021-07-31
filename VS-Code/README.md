@@ -25,4 +25,36 @@ Now that VS Code is installed on your CentOS system you can launch it either fro
 ```
 apt update -y
 snap install --classic code
+code  --user-data-dir
 ```
+### Wrap code on the same windows
+```
+alt + z in windows 
+command + z in MAC 
+```
+
+### Block mode in Vs Code
+```
+alt + shift in windows 
+command + shift in MAC 
+```
+```
+kubectl describe po  pod-name -namespce dev1 |grep -i image
+kubectl describe po  pod-name -namespce dev1 |grep -i image
+kubectl describe po  pod-name -namespce dev1 |grep -i image
+kubectl describe po  pod-name -namespce dev1 |grep -i image
+kubectl describe po  pod-name -namespce dev1 |grep -i image
+kubectl describe po  pod-name -namespce dev1 |grep -i image
+kubectl describe po  pod-name -namespce dev1 |grep -i image
+```
+
+### Change all occurences
+```
+ctrl + f2
+```
+You can also select the word the you want to change all occurence in the file, right click on ckoose `Change all occurences` and change everything as once.
+
+### Search recursive in folder and replace
+![](/images/vs-search.JPG)
+
+
