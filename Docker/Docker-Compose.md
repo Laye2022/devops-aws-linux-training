@@ -15,6 +15,13 @@ chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose -version
 ```
+## Docker Compose Installation on Ubuntu?
+```
+apt update -y
+snap install docker         
+apt  install docker-compose  -y
+docker-compose --version
+```
 
 ## Example
 **1. Create a compose file**
@@ -49,10 +56,11 @@ services:
     - MYSQL_DATABASE=demodb
 ```
 **2. Run the docker compose file to install the applications**
-```
+
 docker-compose up -d
+
 -d = start all the container in detached mode or keep all containers running at the background
-```
+
 
 ```
 docker images
@@ -98,7 +106,9 @@ docker ps
 - Php = back end
 
 **- wordpress:** for front end programing
+
 **- phpadmin:** for back end programing
+
 **- mariadb:** for DB
 
 
@@ -137,52 +147,3 @@ services:
         environment:
         - MYSQL_ROOT_PASSWORD=password
 ```
-
----yaml
-wordpress:
- image: wordpress
- links:
- - wordpress_db:mysql
- ports:
- - "7070:80"
- 
-wordpress_db:
- image: mariadb
- environment:
-    MYSQL_ROOT_PASSWORD: password
- 
-phpadmin:
- image: corbinu/docker-phpmyadmin
- links:
- - wordpress_db:mysql
- ports:
- - "8181:80"
- environment:
-    MYSQL_USERNAME: root
-    MYSQL_ROOT_PASSWORD: password
-```
-
-
-**2. Run the docker compose file to install the applications**
-```
-docker-compose up -d
--d = start all the container in detached mode or keep all containers running at the background
-```
-
-```
-docker images
-docker ps
-```
-
-**3. Test the web applications**
-```
-http://10.0.0.94:8181
-```
-![](/images/php.JPG)
-
-
-```
-http://10.0.0.94:7070
-```
-![](/images/php.JPG)
-
